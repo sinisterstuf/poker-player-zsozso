@@ -2,21 +2,10 @@
  * Created by tmolnar on 3/21/15.
  */
 module.exports = (function () {
-    var winston = require('winston');
-    require('winston-papertrail').Papertrail;
-    var logger = new winston.Logger({
-        transports: [
-            new winston.transports.Papertrail({
-                host: 'logs2.papertrailapp.com',
-                port: 48393,
-                timestamp: function() {
-                    return new Date().toString();
-                },
-                logFormat : function(level, message) {
-                    return '[' + level + '] ' + message;
-                }
-            })
-        ]
+    var logentries = require('le_node');
+    var logger = logentries.logger({
+        token:'d4bb04e4-3a8d-42fc-abd4-b3094feb07ab'
     });
+
     return logger;
 })();
