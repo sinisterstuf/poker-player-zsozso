@@ -23,7 +23,7 @@ function calculateMove(game_state) {
       console.log("KEEP CARDS");
       // keep the cards if we can check
       // TODO: return current bet!!!
-      bet = 200;
+      bet = 0;
       //return gameDecision.getCheckAmount();
     } else {
       console.log("FOLD");
