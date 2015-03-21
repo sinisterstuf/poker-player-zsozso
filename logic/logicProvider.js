@@ -1,4 +1,6 @@
 var stateProvider = require("./stateProvider");
+var constants = require('../constants');
+var lim = constants.lameLimit;
 module.exports = (function(){
 	//TODO:
 
@@ -34,9 +36,19 @@ function toNum(c) {
     }
 }
 
+function lowCards(cards) {
+    // returns true if both cards below lame limit
+    if (toNum(cards[0].rank) < lim && toNum(cards[1].rank) < lim) {
+        return true
+    } else {
+        return false
+    }
+}
+
 function lameCards(cards) {
+    // returns true if either card below lame limit and they are not a pair
     if (
-        (toNum(cards[0].rank) < 4 || toNum(cards[1].rank) < 4) &&
+        (toNum(cards[0].rank) < lim || toNum(cards[1].rank) < lim) &&
         cards[0].rank != cards[1].rank
        ) {
         return true
