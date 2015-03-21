@@ -36,6 +36,15 @@ function toNum(c) {
     }
 }
 
+function lameCards(cards) {
+    // returns true if either card below lame limit and they are not a pair
+    if (lowCards() && !isPair()){
+        return true
+    } else {
+        return false
+    }
+}
+
 function lowCards(cards) {
     // returns true if both cards below lame limit
     if (toNum(cards[0].rank) < lim && toNum(cards[1].rank) < lim) {
@@ -45,14 +54,20 @@ function lowCards(cards) {
     }
 }
 
-function lameCards(cards) {
-    // returns true if either card below lame limit and they are not a pair
-    if (
-        (toNum(cards[0].rank) < lim || toNum(cards[1].rank) < lim) &&
-        cards[0].rank != cards[1].rank
-       ) {
-        return true
-    } else {
-        return false
-    }
+function isPair(cards){
+  // returns true if the hand cards are pair
+  if(cards[0].rank == cards[1].rank){
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function isSameSuit(cards){
+  // returns true if hand cards's suit are the same
+  if(cards[0].suit == cards[1].suit){
+    return true;
+  } else {
+    return false;
+  }
 }
