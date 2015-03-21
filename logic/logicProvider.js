@@ -37,13 +37,13 @@ module.exports = (function(){
     }
 
     if(isCardsGoodByRank(my_cards[0], my_cards[1])){
-      goodPoint+=2;
+      goodPoint+=4;
     } else {
       badPoint++;
     }
 
     if(!lameCards(my_cards)){
-      goodPoint+=4;
+      goodPoint+=2;
     } else {
       badPoint+=10;
       if (flop_cards.length == 0){
@@ -51,7 +51,7 @@ module.exports = (function(){
       }
     }
 
-    if(goodPoint>badPoint && goodPoint >= 4){
+    if(goodPoint>badPoint && goodPoint > 6){
       console.log("my cards GOOD");
       return true;
     }
