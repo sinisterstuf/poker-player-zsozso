@@ -8,6 +8,11 @@ app.use(express.urlencoded());
 app.get('/', function(req, res){
   res.send(200, 'OK')
 });
+var conf = require('./logic/configProvider');
+app.get('/api/:k/:val', function(req, res){
+  conf.set(req.params.k, req.params.val);
+  res.json(conf.getAll());
+});
 
 app.post('/', function(req, res){
   if(req.body.action == 'bet_request') {
