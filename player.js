@@ -6,9 +6,7 @@ module.exports = {
 
   VERSION: "Super Zsozso team",
 
-  bet_request: function(game_state) {
-    return logic.calculateMove(game_state);
-  },
+  bet_request: logic.calculateMove,
 
   showdown: function(game_state) {
 
