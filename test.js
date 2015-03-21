@@ -6,6 +6,12 @@ describe('logic', function () {
 
   describe('#calulateMove', function () {
 
+    it('returns 0 on exception', function () {
+      // causing exception by not providing necessary args
+      var result = logic.calculateMove();
+      result.should.eql(0);
+    });
+
     it('exists', function () {
       (typeof logic).should.eql('object');
       (logic.hasOwnProperty("calculateMove")).should.eql(true);
@@ -16,12 +22,6 @@ describe('logic', function () {
     it('returns an int', function () {
       var result = logic.calculateMove(gs);
       result.should.eql(parseInt(result));
-    });
-
-    it('returns 0 on exception', function () {
-      // causing exception by not providing necessary args
-      var result = logic.calculateMove();
-      result.should.eql(0);
     });
 
   });

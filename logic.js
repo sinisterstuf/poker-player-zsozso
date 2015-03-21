@@ -12,7 +12,7 @@ function calculateMove(game_state) {
     console.log("load gameDecision");
     var gameDecision = require("./logic/gameDecisions");
 
-    var bet = 200;
+    var bet = 70;
 
     if(gameDecision.wantToBet()) {
       console.log("WANT TO BET");
