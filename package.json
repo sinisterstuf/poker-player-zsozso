@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "express": "3.x",
-    "mocha": "^2.2.1"
+    "mocha": "^2.2.1",
+    "should": "^5.2.0"
   }
 }
