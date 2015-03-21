@@ -17,3 +17,19 @@ module.exports = (function(){
 
 	return this;
 })();
+
+function toNum(c) {
+    switch (c) {
+        case 'J':
+            return 11;
+        case 'Q':
+            return 12;
+        case 'K':
+            return 13;
+        case 'A':
+            return 14;
+
+        default:
+            return c;
+    }
+}
