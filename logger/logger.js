@@ -8,16 +8,14 @@ module.exports = (function () {
 
         if (isProd) {
             var options = {
-                url: "http://api.logentries.com/fb4d19bb-49e9-4e05-8451-1f3c06061d35/hosts/heroku/1927b208-82c7-4266-a8d0-ab6d5c6de2ca?realtime=1",
+                url: "http://api.logentries.com/fb4d19bb-49e9-4e05-8451-1f3c06061d35/hosts/heroku/1927b208-82c7-4266-a8d0-ab6d5c6de2ca/?realtime=1",
                 method: "put",
-                body: message
+                body: {
+                    data: message
+                }
             };
 
-            var callback = function(error, response, body) {
-                console.log(body);
-            };
-
-            request(options, callback);
+            request(options, null);
         } else {
             console.log(message);
         }
