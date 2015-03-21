@@ -2,8 +2,12 @@ module.exports = {};
 
 function calculateMove(game_state) {
   try {
+    var gameDecision = require("./logic/gameDecision");
+    var stateProvider = require("./logic/stateProvider");
+    stateProvider.loadCurrentState(game_state);
 
     if(gameDecision.wantToBet()) {
+
       return gameDecision.getBetAmount();
     } else if(gameDecision.canWeKeepCards()) {
       // keep the cards if we can check

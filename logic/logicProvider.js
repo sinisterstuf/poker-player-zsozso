@@ -1,6 +1,6 @@
 module.exports = (function(){
 	//TODO:
-	//var stateProvider = require("./logic/stateProvider");
+	var stateProvider = require("./logic/stateProvider");
 
 	this.getBetAmount = function() {
 		var bet = 500;
@@ -11,7 +11,7 @@ module.exports = (function(){
 
 	this.getCheckAmount = function() {
 		//TODO:
-		//stateProviderGetCheckAmount()
+		//return stateProvider.getCheckAmount()
 		return 10;
 	};
 
