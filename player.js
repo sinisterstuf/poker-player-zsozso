@@ -10,8 +10,7 @@ module.exports = {
     logic.calculateMove(game_state);
   },
 
-        showdown
-  }: function(game_state) {
+  showdown: function(game_state) {
 
   }
 };
