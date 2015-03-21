@@ -73,7 +73,7 @@ function toNum(c) {
 
 function lameCards(cards) {
     // returns true if either card below lame limit and they are not a pair
-    if (lowCards() && !isPair()){
+    if (lowCards(cards) && !isPair(cards)){
         return true
     } else {
         return false
