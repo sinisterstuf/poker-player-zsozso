@@ -13,7 +13,15 @@ module.exports = (function(){
 
   this.getCurrentState = function() {
     return this.game_state;
-  }
+  };
+
+  this.getMyCards = function() {
+    return this.game_state["players"][this.game_state["in_action"]]["hole_cards"] || [];
+  };
+
+  this.getFlopCards = function() {
+    return this.game_state["community_cards"];
+  };
 
   return this;
 })();
