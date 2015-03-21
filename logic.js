@@ -23,7 +23,8 @@ function calculateMove(game_state) {
       console.log("KEEP CARDS");
       // keep the cards if we can check
       // TODO: return current bet!!!
-      bet = 0;
+      bet = get_minimum_raise(game_state);
+      //bet = get_check_amount(game_state);;
       //return gameDecision.getCheckAmount();
     } else {
       console.log("FOLD");
@@ -58,6 +59,10 @@ function calculateMove(game_state) {
 
 function get_minimum_raise(game_state){
   return parseInt(game_state["current_buy_in"] - game_state["players"][game_state["in_action"]]["bet"] + game_state["minimum_raise"]);
+}
+
+function get_check_amount(game_state){
+  return parseInt(game_state["current_buy_in"] - game_state["players"][game_state["in_action"]]["bet"]);
 }
 
 function dumpError(err) {
