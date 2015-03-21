@@ -21,7 +21,7 @@ function calculate_move(game_state) {
     var first = cards[0];
     var second = cards[1];
 
-    bet = get_minimum_raise + bet;
+    bet = get_minimum_raise(game_state) + bet;
 
     if(isNaN(parseInt(bet))){
       bet = 1100;
@@ -35,5 +35,5 @@ function calculate_move(game_state) {
 }
 
 function get_minimum_raise(game_state){
-   return game_state["current_buy_in"] - game_state["players"][game_state["in_action"]][game_state["bet"]] + game_state["minimum_raise"];
+   return parseInt(game_state["current_buy_in"] - game_state["players"][game_state["in_action"]][game_state["bet"]] + game_state["minimum_raise"]);
 }
