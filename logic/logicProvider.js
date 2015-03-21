@@ -30,7 +30,7 @@ function toNum(c) {
             return 14;
 
         default:
-            return c;
+            return parseInt(c);
     }
 }
 
