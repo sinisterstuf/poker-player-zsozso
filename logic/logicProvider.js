@@ -23,14 +23,39 @@ module.exports = (function(){
   this.cardRankGood = function(){
     var my_cards = stateProvider.getMyCards();
     var flop_cards = stateProvider.getFlopCards();
+    var goodPoint = 0;
+    var badPoint = 0;
     console.log(my_cards);
     console.log(flop_cards);
     console.log("cards", my_cards);
     console.log("cards", flop_cards);
-    if((isCardsGoodBySuit(my_cards[0],my_cards[1]) || isCardsGoodByRank(my_cards[0], my_cards[1])) && !lameCards(my_cards)){
+
+    if(isCardsGoodBySuit(my_cards[0],my_cards[1])){
+      goodPoint+=2;
+    } else {
+      badPoint++;
+    }
+
+    if(isCardsGoodByRank(my_cards[0], my_cards[1])){
+      goodPoint+=2;
+    } else {
+      badPoint++;
+    }
+
+    if(!lameCards(my_cards)){
+      goodPoint+=4;
+    } else {
+      badPoint+=10;
+      if (flop_cards.length == 0){
+        return false;
+      }
+    }
+
+    if(goodPoint>badPoint && goodPoint >= 4){
       console.log("my cards GOOD");
       return true;
     }
+
     console.log("my cards BAD");
     return false;
   };
