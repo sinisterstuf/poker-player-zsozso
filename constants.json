@@ -1,3 +1,5 @@
 {
-  "lameLimit": 8
+  "lameLimit": 8,
+  "smallBet": 10,
+  "bigBet": 70
 }
