@@ -1,7 +1,7 @@
 
 module.exports = {
 
-  VERSION: "Default JavaScript folding player",
+  VERSION: "Super Zsozso team",
 
   bet_request: function(game_state) {
 	  return calculate_move(game_state);
