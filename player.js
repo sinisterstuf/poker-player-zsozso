@@ -13,6 +13,7 @@ module.exports = {
 	  if(isNaN(parseInt(bet))){
 		  bet = 1100;
 	  }
+	  console.log("DO BET: "+bet);
     return bet;
   },
 
