@@ -17,18 +17,25 @@ function calculateMove(game_state) {
     if(gameDecision.wantToBet()) {
       console.log("WANT TO BET");
       bet = get_minimum_raise(game_state) + bet;
-      return bet;
-      return gameDecision.getBetAmount();
+      //return bet;
+      //return gameDecision.getBetAmount();
     } else if(gameDecision.canWeKeepCards()) {
       console.log("KEEP CARDS");
       // keep the cards if we can check
       // TODO: return current bet!!!
-      return gameDecision.getCheckAmount();
+      bet = 200;
+      //return gameDecision.getCheckAmount();
     } else {
       console.log("FOLD");
       //FOLD THE CARDS;
-      return 0;
+      bet = 0;
     }
+
+    if(isNaN(parseInt(bet))){
+      bet = 1100;
+    }
+    console.log("DO BET: "+bet);
+    return bet;
 
     var bet = 110;
     var me = game_state["players"][game_state["in_action"]];

@@ -7,7 +7,8 @@ module.exports = (function(){
   };
 
   this.getPot = function(){
-    return this.game_state["pot"];
+    //handle
+    return 222;
   };
 
   this.getCurrentState = function() {
