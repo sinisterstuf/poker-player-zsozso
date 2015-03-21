@@ -29,7 +29,7 @@ function calculateMove(game_state) {
     console.log("DO BET: "+bet);
     return bet;
   } catch(e) {
-    console.log('caught horrible exception; folding!');
+    console.log('caught horrible exception:', e, 'folding!');
     return 0;
   }
 }; module.exports.calculateMove = calculateMove;
