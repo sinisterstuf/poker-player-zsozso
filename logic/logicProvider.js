@@ -23,15 +23,15 @@ module.exports = (function(){
   this.cardRankGood = function(){
     var my_cards = stateProvider.getMyCards();
     var flop_cards = stateProvider.getFlopCards();
-    // logger(my_cards);
-    // logger(flop_cards);
+    console.log(my_cards);
+    console.log(flop_cards);
     console.log("cards", my_cards);
     console.log("cards", flop_cards);
     if(isCardsGoodBySuit(my_cards[0]) || isCardsGoodByRank(my_cards[1])){
-      // logger("my cards GOOD");
+      console.log("my cards GOOD");
       return true;
     }
-    // logger("my cards BAD");
+    console.log("my cards BAD");
     return false;
   };
 
