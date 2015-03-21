@@ -6,10 +6,10 @@ module.exports = (function(){
 
 	this.wantToBet = function(){
 		//TODO: logic from state
-		var current_state = stateProvider.getCurrentState();
-    console.log("POT!",stateProvider.getPot());
+		//var current_state = stateProvider.getCurrentState();
+    //console.log("POT!",stateProvider.getPot());
 		//return BOOL
-		return true;
+		return logicProvider.cardRankGood();
 	};
 
 	this.canWeKeepCards = function() {
