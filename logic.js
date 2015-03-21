@@ -32,10 +32,8 @@ function calculateMove(game_state) {
     console.log('caught horrible exception; folding!');
     return 0;
   }
-}
+}; module.exports.calculateMove = calculateMove;
 
 function get_minimum_raise(game_state){
   return parseInt(game_state["current_buy_in"] - game_state["players"][game_state["in_action"]][game_state["bet"]] + game_state["minimum_raise"]);
 }
-
-module.exports.calculateMove = calculateMove;
