@@ -26,4 +26,24 @@ describe('logic', function () {
 
   });
 
+  describe('#isPair', function () {
+    var lp = require('./logic/logicProvider');
+
+    it('finds a pair', function () {
+      var cards = [
+        { "rank": "6", "suit": "hearts" },
+        { "rank": "6", "suit": "spades" }
+      ];
+      lp.isPair(cards).should.eql(true);
+    });
+
+    it('finds a non-pair', function () {
+      var cards = [
+        { "rank": "6", "suit": "hearts" },
+        { "rank": "K", "suit": "spades" }
+      ];
+      lp.isPair(cards).should.eql(false);
+    });
+  });
+
 });
