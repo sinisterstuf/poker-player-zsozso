@@ -27,7 +27,7 @@ module.exports = (function(){
     console.log(flop_cards);
     console.log("cards", my_cards);
     console.log("cards", flop_cards);
-    if(isCardsGoodBySuit(my_cards[0]) || isCardsGoodByRank(my_cards[1])){
+    if((isCardsGoodBySuit(my_cards[0],my_cards[1]) || isCardsGoodByRank(my_cards[0], my_cards[1])) && !lameCards(my_cards)){
       console.log("my cards GOOD");
       return true;
     }
@@ -42,14 +42,14 @@ module.exports = (function(){
 
 
 function isCardsGoodBySuit(card1, card2) {
-  if (card1 == card2) {
+  if (card1.suit == card2.suit) {
     return true;
   }
   return false;
 }
 
 function isCardsGoodByRank(card1, card2) {
-  if (card1 == card2) {
+  if (card1.rank == card2.rank) {
     return true;
   }
   return false;
@@ -98,11 +98,3 @@ function isPair(cards){
   }
 }
 
-function isSameSuit(cards){
-  // returns true if hand cards's suit are the same
-  if(cards[0].suit == cards[1].suit){
-    return true;
-  } else {
-    return false;
-  }
-}
