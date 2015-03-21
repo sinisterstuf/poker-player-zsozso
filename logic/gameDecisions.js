@@ -7,7 +7,7 @@ module.exports = (function(){
 	this.wantToBet = function(){
 		//TODO: logic from state
 		var current_state = stateProvider.getCurrentState();
-    console.log("POT!",current_state.getPot());
+    console.log("POT!",stateProvider.getPot());
 		//return BOOL
 		return true;
 	};

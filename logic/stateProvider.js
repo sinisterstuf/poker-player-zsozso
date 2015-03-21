@@ -10,5 +10,9 @@ module.exports = (function(){
     return this.game_state["pot"];
   };
 
+  this.getCurrentState = function() {
+    return this.game_state;
+  }
+
   return this;
 })();
