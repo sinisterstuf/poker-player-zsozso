@@ -1,5 +1,6 @@
+//var logicProvider = require("./logicProvider");
+
 module.exports = (function(){
-	var logicProvider = require("./logic/logicProvider");
 
 
 	this.wantToBet = function(){
@@ -18,11 +19,11 @@ module.exports = (function(){
 	};
 
 	this.getCheckAmount = function() {
-		return logicProvider.getCheckAmount();
+		//return logicProvider.getCheckAmount();
 	};
 
 	this.getBetAmount = function() {
-		return logicProvider.getBetAmount();
+		//return logicProvider.getBetAmount();
 	};
 
 	return this;

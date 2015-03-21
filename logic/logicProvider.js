@@ -1,6 +1,6 @@
+var stateProvider = require("./stateProvider");
 module.exports = (function(){
 	//TODO:
-	var stateProvider = require("./logic/stateProvider");
 
 	this.getBetAmount = function() {
 		var bet = 500;
