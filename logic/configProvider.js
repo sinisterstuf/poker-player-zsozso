@@ -1,6 +1,9 @@
 module.exports = (function(){
-  var conf = {};
-  conf.betLimit = 20;
+  var conf = {
+    "lameLimit": 10,
+    "smallBet": 10,
+    "bigBet": 70
+  };
   this.getAll = function() {
     return conf;
   };

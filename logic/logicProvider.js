@@ -1,6 +1,6 @@
 var stateProvider = require("./stateProvider");
-var constants = require('../constants');
-var lim = constants.lameLimit;
+var constants = require('./configProvider');
+var lim = constants.get('lameLimit');
 
 module.exports = (function(){
 	//TODO:
