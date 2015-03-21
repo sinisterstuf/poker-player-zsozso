@@ -42,6 +42,16 @@ module.exports = (function(){
       badPoint++;
     }
 
+    if(isPair(my_cards) && !lowCards(my_cards)){
+      //COOL CARDS!
+      console.log("cool commit");
+      return true;
+    }
+
+    if(!lowCards(my_cards) && flop_cards.length == 0){
+      return true;
+    }
+
     if(!lameCards(my_cards)){
       goodPoint+=2;
     } else {
