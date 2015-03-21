@@ -32,7 +32,7 @@ function calculateMove(game_state) {
     }
 
     if(isNaN(parseInt(bet))){
-      bet = 1100;
+      bet = 0;
     }
     console.log("DO BET: "+bet);
     return bet;
