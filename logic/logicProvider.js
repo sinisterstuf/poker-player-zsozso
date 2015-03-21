@@ -121,5 +121,5 @@ function isPair(cards){
   } else {
     return false;
   }
-}
+}; module.exports.isPair = isPair;
 
