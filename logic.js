@@ -2,24 +2,30 @@ module.exports = {};
 
 function calculateMove(game_state) {
   try {
+    console.log("calculateMove called");
     var stateProvider = require("./logic/stateProvider");
+    console.log("stateProvider loadState call");
     stateProvider.loadCurrentState(game_state);
 
+    console.log("load logic Provider");
     var logicProvider = require("./logic/logicProvider");
+    console.log("load gameDecision");
     var gameDecision = require("./logic/gameDecisions");
 
     var bet = 200;
 
     if(gameDecision.wantToBet()) {
+      console.log("WANT TO BET");
       bet = get_minimum_raise(game_state) + bet;
       return bet;
       return gameDecision.getBetAmount();
     } else if(gameDecision.canWeKeepCards()) {
+      console.log("KEEP CARDS");
       // keep the cards if we can check
       // TODO: return current bet!!!
       return gameDecision.getCheckAmount();
     } else {
-
+      console.log("FOLD");
       //FOLD THE CARDS;
       return 0;
     }

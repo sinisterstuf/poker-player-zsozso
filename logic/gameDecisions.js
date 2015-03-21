@@ -1,12 +1,13 @@
-//var logicProvider = require("./logicProvider");
+var logicProvider = require("./logicProvider");
+var stateProvider = require("./stateProvider");
 
 module.exports = (function(){
 
 
 	this.wantToBet = function(){
 		//TODO: logic from state
-		//var current_state = stateProvider.getCurrentState();
-
+		var current_state = stateProvider.getCurrentState();
+    console.log("POT!",current_state.getPot());
 		//return BOOL
 		return true;
 	};
