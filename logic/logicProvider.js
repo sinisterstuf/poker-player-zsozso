@@ -33,3 +33,14 @@ function toNum(c) {
             return c;
     }
 }
+
+function lameCards(cards) {
+    if (
+        (toNum(cards[0].rank) < 4 || toNum(cards[1].rank) < 4) &&
+        cards[0].rank != cards[1].rank
+       ) {
+        return true
+    } else {
+        return false
+    }
+}
