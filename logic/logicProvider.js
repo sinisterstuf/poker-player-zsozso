@@ -1,5 +1,4 @@
 var stateProvider = require("./stateProvider");
-var logger = require("./../logger/logger");
 var constants = require('../constants');
 var lim = constants.lameLimit;
 
@@ -24,15 +23,15 @@ module.exports = (function(){
   this.cardRankGood = function(){
     var my_cards = stateProvider.getMyCards();
     var flop_cards = stateProvider.getFlopCards();
-    logger(my_cards);
-    logger(flop_cards);
+    // logger(my_cards);
+    // logger(flop_cards);
     console.log("cards", my_cards);
     console.log("cards", flop_cards);
     if(isCardsGoodBySuit(my_cards[0]) || isCardsGoodByRank(my_cards[1])){
-      logger("my cards GOOD");
+      // logger("my cards GOOD");
       return true;
     }
-    logger("my cards BAD");
+    // logger("my cards BAD");
     return false;
   };
 
