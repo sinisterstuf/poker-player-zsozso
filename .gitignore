@@ -1,3 +1,4 @@
 express.pid
 .idea
+*.swp
 node_modules
