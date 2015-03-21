@@ -51,7 +51,7 @@ module.exports = (function(){
       }
     }
 
-    if(goodPoint>badPoint || goodPoint >= 4){
+    if(goodPoint>badPoint && goodPoint >= 4){
       console.log("my cards GOOD");
       return true;
     }
