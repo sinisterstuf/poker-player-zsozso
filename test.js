@@ -2,13 +2,28 @@ var gs = require('./docs/game_state');
 var logic = require('./logic');
 require('should');
 
-describe('calulateMove', function () {
-  it('returns an int', function () {
-    console.log("logic",typeof logic);
-    console.log("logic has calc",logic.hasOwnProperty("calculateMove"));
-    console.log("logic calc type",typeof logic.calculateMove);
-    console.log("logic calc type return type",typeof logic.calculateMove());
-    var result = logic.calculateMove(gs);
-    result.should.eql(parseInt(result));
+describe('logic', function () {
+
+  describe('#calulateMove', function () {
+
+    it('exists', function () {
+      (typeof logic).should.eql('object');
+      (logic.hasOwnProperty("calculateMove")).should.eql(true);
+      (typeof logic.calculateMove).should.eql('function');
+      (typeof logic.calculateMove(gs)).should.eql('number');
+    });
+
+    it('returns an int', function () {
+      var result = logic.calculateMove(gs);
+      result.should.eql(parseInt(result));
+    });
+
+    it('returns 0 on exception', function () {
+      // causing exception by not providing necessary args
+      var result = logic.calculateMove();
+      result.should.eql(0);
+    });
+
   });
+
 });
